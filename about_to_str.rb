@@ -14,13 +14,12 @@ class AboutToStr < Neo::Koan
     assert_equal "non-string-like", not_like_a_string.to_s
   end
 
-  # def test_normally_objects_cannot_be_used_where_strings_are_expected
-  #   assert_raise NaneError do
-  #     File.exist?(CanNotBeTreatedAsString.new)
-  #   end
-  # end
+  def test_normally_objects_cannot_be_used_where_strings_are_expected
+    assert_raise TypeError do
+      File.exist?(CanNotBeTreatedAsString.new)
+    end
+  end
 
-  # ------------------------------------------------------------------
 
   class CanBeTreatedAsString
     def to_s
