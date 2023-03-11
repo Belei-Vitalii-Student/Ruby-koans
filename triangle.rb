@@ -14,7 +14,27 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  if a <= 0 or b <= 0 or c <= 0
+    raise TriangleError, "All sides must be positive"
+  end
+
+  x, y, z = [a,b,c].sort
+  if x + y <= z
+    raise TriangleError, "Sum of two short side must be less than longest side"
+  end
+
+  if a == b and b == c and a == c 
+    return :equilateral
+  end
+
+  if a == b or b == c or a == c
+    return :isosceles
+  end
+
+  if a != b and b != c and a != c
+    return :scalene
+  end
+
 end
 
 # Error class used in part 2.  No need to change this code.
