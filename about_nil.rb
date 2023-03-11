@@ -18,7 +18,6 @@ class AboutNil < Neo::Koan
 
       # What message was attached to the exception?
       # (HINT: replace __ with part of the error message.)
-      puts ex.message
       assert_match(/`some_method_nil_doesnt_know_about'/, ex.message)
     end
   end

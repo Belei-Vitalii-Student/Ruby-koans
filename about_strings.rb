@@ -153,8 +153,6 @@ EOS
 
   in_ruby_version("1.8") do
     def test_in_older_ruby_single_characters_are_represented_by_integers
-      puts ?a
-      puts ?b == (?a + 1)
       assert_equal "a", ?a
       assert_equal false, ?a == 97
 
